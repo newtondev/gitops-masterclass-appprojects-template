@@ -6,12 +6,11 @@ metadata:
 servers: 1
 image: rancher/k3s:v1.32.3-k3s1
 ports:
-  - port: 443:30272
+  - port: 30272:30272
     nodeFilters:
       - server:*
 options:
   k3d:
-    disableLoadbalancer: true
     wait: true
     timeout: "60s"
   k3s:
