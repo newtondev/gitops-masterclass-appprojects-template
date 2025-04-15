@@ -4,10 +4,11 @@ kind: Simple
 metadata:
   name: dev
 servers: 1
-kubeAPI:
-  hostIP: "0.0.0.0"
-  hostPort: "6443"
 image: rancher/k3s:v1.32.3-k3s1
+ports:
+  - port: 443:30272
+    nodeFilters:
+      - server:*
 options:
   k3d:
     wait: true
