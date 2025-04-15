@@ -10,7 +10,7 @@ helm repo add argo https://argoproj.github.io/argo-helm
 helm repo update
 helm install argocd argo/argo-cd --namespace argocd --create-namespace \
     --set server.service.type="NodePort" \
-    --set server.service.nodePortHttp=30272
+    --set server.service.nodePortHttps=30272
 
 
 echo "post-create complete" >> ~/.status.log
