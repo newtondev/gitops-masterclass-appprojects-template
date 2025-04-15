@@ -11,6 +11,7 @@ ports:
       - server:*
 options:
   k3d:
+    disableLoadbalancer: true
     wait: true
     timeout: "60s"
   k3s:
