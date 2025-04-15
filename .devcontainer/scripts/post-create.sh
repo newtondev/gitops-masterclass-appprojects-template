@@ -6,11 +6,8 @@ echo "post-create start" >> ~/.status.log
 k3d cluster create --config .devcontainer/manifests/k3d-dev.yaml --wait | tee -a ~/.status.log
 
 # Install Argo CD using Helm
-helm repo add argo https://argoproj.github.io/argo-helm
-helm repo update
-helm install argocd argo/argo-cd --namespace argocd --create-namespace \
-    --set server.service.type="NodePort" \
-    --set server.service.nodePortHttps=30272
-
+helm repo add argo https://argoproj.github.io/argo-helm | tee -a  ~/.status.log 
+helm repo update | tee -a  ~/.status.log 
+helm install argocd argo/argo-cd --namespace argocd --create-namespace --set server.service.type="NodePort"  --set server.service.nodePortHttps=30272 | tee -a  ~/.status.log 
 
 echo "post-create complete" >> ~/.status.log

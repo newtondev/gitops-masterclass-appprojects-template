@@ -1,6 +1,6 @@
 #!/bin/bash
 workspace="/workspaces/$(basename ${GITHUB_REPOSITORY})"
-statuslog="../status.log"
+statuslog="~/.status.log"
 
 ## Check to see if you're in the right path
 ## This protects against updating the template while working on the template repo.
