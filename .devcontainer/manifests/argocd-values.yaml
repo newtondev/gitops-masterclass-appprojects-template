@@ -1,5 +1,0 @@
-server:
-  service:
-    type: "NodePort"
-    #nodePortHttps: 30272
-    nodePortHttp: 30272
