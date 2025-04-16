@@ -13,6 +13,19 @@ bash .devcontainer/scripts/update-repo-for-workshop.sh | tee -a  ~/.status.log
 # Wit for Argo CD to be ready
 kubectl rollout status -n argocd sts/argocd-application-controller | tee -a  ~/.status.log
 
+# Wait for the port to be ready
+counter=0
+until [[ $(curl -s -o /dev/null -w "%{http_code}" localhost:30272) -eq 307 ]]
+do
+    echo "Waiting for Argo CD endpoint to be ready..." | tee -a  ~/.status.log
+    sleep 5
+    counter=$((counter+1))
+    if [[ $counter -gt 60 ]]; then
+        echo "Port not available for Argo CD CLI" | tee -a  ~/.status.log
+        exit 1
+    fi
+done
+
 # Update Argo CD Admin Password
 argopass=$(kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath='{.data.password}' | base64 -d)
 argouri="localhost:30272"
