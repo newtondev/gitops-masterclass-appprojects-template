@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: workloads
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  destinations:
+  - name: in-cluster
+    namespace: '*'
+    server: https://kubernetes.default.svc
+  sourceRepos:
+  - https://github.com/christianh814/simple-go
+  roles:
+    - name: user
+      description: Admin privileges to user
+      policies:
+        - g, christian, role:user
+        - p, proj:workloads:admin, projects, get, workloads, allow
+        - p, proj:workloads:admin, applications, workloads/*, *, allow
