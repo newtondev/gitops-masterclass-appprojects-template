@@ -30,7 +30,9 @@ On your repository that was created from this template, click on the "Code" butt
 
 ![create codespace](images/create_codespace.png)
 
-This will launch your Codespace in a new tab. Once it's ready, you'll see a VSCode-like instance with a terminal. **DO NOT DO ANYTHING YET**, it takes about 30ish seconds for the post-setup scripts to finish. You will see the following in your terminal section of your Codespace when the post-setup scripts are running:
+This will launch your Codespace in a new tab. Once it's ready, you'll see a VSCode-like instance with a terminal.
+
+:rotating_light: **DO NOT DO ANYTHING YET** :rotating_light:, it takes about 30ish seconds for the post-setup scripts to finish. You will see the following in your terminal section of your Codespace when the post-setup scripts are running:
 
 ![waiting for postsetup](images/wait_for_post_commands.png)
 
