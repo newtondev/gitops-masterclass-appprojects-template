@@ -5,6 +5,6 @@ metadata:
   namespace: argocd
 data:
   policy.overlay.csv: |
-    p, christian, projects, get, workloads, allow
-    p, christian, applications, workloads/*, *, allow
+    p, role:user, projects, get, workloads, allow
+    p, role:user, applications, workloads/*, *, allow
     g, christian, role:user
