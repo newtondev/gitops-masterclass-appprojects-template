@@ -13,10 +13,3 @@ spec:
     server: https://kubernetes.default.svc
   sourceRepos:
   - https://github.com/christianh814/simple-go
-  roles:
-    - name: user
-      description: Admin privileges to user
-      policies:
-        - g, christian, role:user
-        - p, proj:workloads:admin, projects, get, workloads, allow
-        - p, proj:workloads:admin, applications, workloads/*, *, allow
