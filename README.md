@@ -76,7 +76,7 @@ In the "PORTS" overview, you'll see a row that says "Argo CD Dashboard", click o
 
 ![click on globe](images/click_on_globe.png)
 
-This opens the Argo CD Dashboard in a new tab. You can login with the username `admin` and password of `admin`
+This opens the Argo CD Dashboard in a new tab. You can login with the username `admin` and password of `password`
 
 ![argocd dashboard](images/argocd_dashboard.png)
 
