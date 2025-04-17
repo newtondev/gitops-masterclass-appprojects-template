@@ -13,3 +13,11 @@ spec:
     server: https://kubernetes.default.svc
   sourceRepos:
   - https://github.com/christianh814/simple-go
+  roles:
+  - name: custom-project-role
+    description: The "custom-project-role" will be applied to "christian"
+    groups:
+    - christian
+    policies:
+    - p, proj:workloads:custom-project-role, projects, get, workloads, allow
+    - p, proj:workloads:custom-project-role, applications, *, workloads/*, allow
