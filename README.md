@@ -84,3 +84,12 @@ This opens the Argo CD Dashboard in a new tab. You can login with the username `
 
 Once these things have been verified, the Codespace is ready to use for the workshop!
 
+## Create a user (demo purposes)
+
+```shell
+kubectl patch -n argocd cm argocd-cm --type='merge' -p='{"data": {"accounts.craig": "apiKey, login"}}'
+```
+
+```shell
+argocd account update-password --account=craig --new-password=password
+```

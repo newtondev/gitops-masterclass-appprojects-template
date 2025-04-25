@@ -11,7 +11,7 @@ spec:
     path: workloads/cert-manager/
     repoURL: https://github.com/newtondev/gitops-masterclass-appprojects-template
     targetRevision: main
-  project: default
+  project: cluster-addons
   syncPolicy:
     automated:
       prune: true
